@@ -19,26 +19,32 @@ ShaguPlates_locale["esES"]["healduration"] = {
 
 ShaguPlates_locale["esES"]["bagtypes"] = {
   ["Carcaj"] = "QUIVER",
-  ["Bolsa de almas"] = "SOULBAG",
+  --["Bolsa de almas"] = "SOULBAG",
+  ["Bolsa de Almas"] = "SOULBAG",--SA
   ["Bolsa"] = "DEFAULT",
 }
 
 ShaguPlates_locale["esES"]["itemtypes"] = {
   ["INVTYPE_WAND"] = "Varita",
-  ["INVTYPE_THROWN"] = "Arma arrojadiza",
-  ["INVTYPE_GUN"] = "Arma de fuego",
+  --["INVTYPE_THROWN"] = "Arma arrojadiza",
+  ["INVTYPE_THROWN"] = "Arma Arrojadiza",--SA
+  --["INVTYPE_GUN"] = "Arma de fuego",
+  ["INVTYPE_GUN"] = "Arma de Fuego",--SA
   ["INVTYPE_CROSSBOW"] = "Ballesta",
   ["INVTYPE_PROJECTILE"] = "Proyectil",
 }
 
 ShaguPlates_locale["esES"]["hunterpaging"] = {
-  ["MELEE"] = "Cortar alas",
+  --["MELEE"] = "Cortar alas",
+  ["MELEE"] = "Corte de Alas",--SA
   ["RANGED"] = "Disparo Arcano",
 }
 
 ShaguPlates_locale["esES"]["customcast"] = {
-  ["AIMEDSHOT"] = "Disparo de puntería",
-  ["MULTISHOT"] = "Multidisparo",
+  ["AIMEDSHOT"] = "Disparo Apuntado",--SA
+  ["MULTISHOT"] = "Disparo Múltiple",--SA
+  --["AIMEDSHOT"] = "Disparo de puntería",
+  --["MULTISHOT"] = "Multidisparo",
 }
 
 ShaguPlates_locale["esES"]["critters"] = {
@@ -119,20 +125,30 @@ ShaguPlates_locale["esES"]["critters"] = {
   'Curiana corrupta',
   'Rata corrupta',
   'Sapo',
+  'Serpiente',
   'Fallo en transportador',
   'Tortuga polimórfica',
   'Bajapata',
   'Voz de Elune',
   'Waypoint',
   'Fuego fatuo',
+  'Cerdo',
+  'Cuervo',
+  'Gallina',
+  'Vibora',
+  'Rata Contaminada',
+  'Cucaracha Contaminada',
 }
 
 ShaguPlates_locale["esES"]["dyndebuffs"] = {
   ["Rupture"] = "Ruptura",
-  ["Kidney Shot"] = "Golpe en los riñones",
+  --["Kidney Shot"] = "Golpe en los riñones",
+  ["Kidney Shot"] = "Golpe de Riñón",--SA
   ["Rend"] = "Desgarrar",
-  ["Shadow Word: Pain"] = "Palabra de las Sombras: dolor",
-  ["Demoralizing Shout"] = "Grito desmoralizador",
+  --["Shadow Word: Pain"] = "Palabra de las Sombras: dolor",
+  ["Shadow Word: Pain"] = "Palabra de Sombra: Dolor",--SA
+  --["Demoralizing Shout"] = "Grito desmoralizador",
+  ["Demoralizing Shout"] = "Grito Desmoralizador",--SA
   ["Frostbolt"] = "Descarga de Escarcha",
   ["Gouge"] = "Incapacitación",
 }
@@ -153,10 +169,12 @@ ShaguPlates_locale["esES"]["interrupts"] = {
   ["Arremetida de conmoción"] = true,
   ["Embestida aturdidora"] = true,
   ["Aturdimiento de intercepción"] = true,
-  ["Martillo de justicia"] = true,
+  --["Martillo de justicia"] = true,
+  ["Martillo de la Justicia"] = true,--SA
   ["Golpe bajo"] = true,
   ["Incapacitación"] = true,
-  ["Golpe en los riñones"] = true,
+  --["Golpe en los riñones"] = true,
+  ["Golpe de Riñón"] = true,--SA
   ["Silencio"] = true,
   ["Contrahechizo"] = true,
   ["Contrahechizo: silenciado"] = true,
@@ -195,9 +213,11 @@ ShaguPlates_locale["esES"]["interrupts"] = {
 
 ShaguPlates_locale["esES"]["resurrections"] = {
   ["Resurrección"] = true,
-  ["Renacer"] = true,
+  --["Renacer"] = true,
+  ["Renacimiento"] = true,--SA
   ["Redención"] = true,
-  ["Espíritu ancestral"] = true,
+  --["Espíritu ancestral"] = true,
+  ["Espíritu Ancestral"] = true,--SA
 }
 
 ShaguPlates_locale["esES"]["spells"] = {
@@ -547,6 +567,7 @@ ShaguPlates_locale["esES"]["spells"] = {
   ['Disparo explosivo']={t=1000,icon='Spell_Fire_Fireball02'},
   ['Disparo explotante']={t=1000,icon='Spell_Fire_Fireball02'},
   ['Disparo falso']={t=2000,icon='Ability_Marksmanship'},
+  ['Disparo firme']={t=1000,icon='Ability_hunter_steadyshot'},
   ['Dolor abrasador']={t=1500,icon='Spell_Fire_SoulBurn'},
   ['Dolor entumecedor']={t=1500,icon='Spell_Nature_CorrosiveBreath'},
   ['Dominación']={t=1000,icon='Spell_Shadow_ShadowWordDominate'},
@@ -1377,6 +1398,7 @@ ShaguPlates_locale["esES"]["spells"] = {
   ['Torpeza II']={t=1000,icon='Spell_Shadow_Fumble'},
   ['Torpeza III']={t=1000,icon='Spell_Shadow_Fumble'},
   ['Tortuga de montar']={t=3000,icon='Ability_Hunter_Pet_Turtle'},
+  ['Tortuga Montada']={t=3000,icon='Ability_Hunter_Pet_Turtle'},
   ['Toxina fangosa']={t=2000,icon='Spell_Nature_Regenerate'},
   ['Toxina instantánea']={t=3000,icon='INV_Potion_19'},
   ['Toxina letal']={t=3000,icon='Spell_Nature_CorrosiveBreath'},
@@ -1462,6 +1484,34 @@ ShaguPlates_locale["esES"]["spells"] = {
   ['Ácido de Hakkar']={t=1000,icon='Spell_Nature_Acid_01'},
   ['Árbol Tammra']={t=1300,icon='Temp'},
   ['Éxtasis melódico']={t=1000,icon='Temp'},
+  -- Turtle SA
+  ['Disparo Apuntado']={t=3000,icon='INV_Spear_07'},
+  ['Disparo Estable']={t=1000,icon='Ability_hunter_steadyshot'},
+  ['Portal a Villa Dorada']={t=5000,icon='Temp'},
+  ['Teletransportar a Villa Dorada']={t=2000,icon='Temp'},
+  ['Teletransportar a Páramos de Poniente']={t=2000,icon='Temp'},
+  ['Teletransportar a Bosque de la Penumbra']={t=2000,icon='Temp'},
+  ['Teletransportar a Elwynn']={t=2000,icon='Temp'},
+  ['Cadenas de Hielo']={t=1300,icon='Spell_Frost_ChainsOfIce'},
+  ['Abrazo de la Viuda']={t=500,icon='Spell_Arcane_Blink'},
+  ['Rayo Encadenado']={t=2500,icon='Spell_Nature_ChainLightning'},
+  ['Lobo Fantasmal']={t=3000,icon='Spell_Nature_SpiritWolf'},
+  ['Ola de Sanación']={t=3000,icon='Spell_Nature_MagicImmunity'},
+  ['Rayo de Relámpago']={t=3000,icon='Spell_Nature_Lightning'},
+  ['Vista Lejana']={t=2000,icon='Spell_Nature_FarSight'},
+  ['Control Mental']={t=3000,icon='Spell_Shadow_ShadowWordDominate'},
+  ['Rayo de Sombra']={t=3000,icon='Spell_Shadow_ShadowBolt'},
+  ['Rayo de Fuego']={t=2000,icon='Spell_Fire_FireBolt'},
+  ['Rayo de Fuego II']={t=3000,icon='Spell_Fire_FireBolt02'},
+  ['Rayo de Fuego III']={t=3000,icon='Spell_Fire_FireBolt02'},
+  ['Rayo de Fuego IV']={t=3000,icon='Spell_Fire_FireBolt02'},
+  ['Primeros Auxilios']={t=3000,icon='Spell_Holy_GreaterHeal'},
+  ['Lluvia de Llamas']={t=3000,icon='Spell_Fire_SelfDestruct'},
+  ['Polimorfia']={t=1500,icon='Spell_Nature_Polymorph'},
+  ['Polimorfia: Cerdo']={t=1500,icon='Spell_Magic_PolymorphPig'},
+  ['Polimorfia: Tortuga']={t=1500,icon='Ability_Hunter_Pet_Turtle'},
+  ['Polimorfia: Vaca']={t=1500,icon='Spell_Nature_Polymorph_Cow'},
+  ['Revivir Mascota']={t=10000,icon='Ability_Hunter_BeastSoothe'},
 }
 
 ShaguPlates_locale["esES"]["debuffs"] = {
@@ -1482,7 +1532,9 @@ ShaguPlates_locale["esES"]["debuffs"] = {
   ['Aguijonero de veneno']={[0]=10.0,},
   ['Aguijón de dracoleón']={[0]=12.0,},
   ['Aguijón de escorpido']={[0]=20.0,},
+  ['Aguijón de Escórpido']={[0]=20.0,},--SA
   ['Aguijón de serpiente']={[0]=15.0,},
+  ['Aguijón de Víbora']={[0]=8.0,},--SA
   ['Aguijón escórpido mejorado']={[0]=20.0,},
   ['Aguijón fatal']={[0]=12.0,},
   ['Aguijón puoso']={[0]=300.0,},
@@ -1517,6 +1569,7 @@ ShaguPlates_locale["esES"]["debuffs"] = {
   ['Aspecto de Jeklik']={[0]=5.0,},
   ['Aspecto de Mar\'li']={[0]=6.0,},
   ['Aspecto de Venoxis']={[0]=10.0,},
+  ['Asustar Bestia']={[1]=10.0,[2]=15.0,[0]=15.0,},--SA
   ['Ataque Estigma de Escarcha']={[0]=8.0,},
   ['Ataque en oleada']={[0]=2.5,},
   ['Aterrorizar']={[0]=4.0,},
@@ -1630,11 +1683,14 @@ ShaguPlates_locale["esES"]["debuffs"] = {
   ['Contrahechizo: silenciado']={[0]=4.0,},
   ['Control de batalla']={[0]=6.0,},
   ['Control mental']={[0]=60.0,},
+  ['Control Mental']={[0]=60.0,},--SA
   ['Corrupción']={[1]=12.0,[2]=15.0,[3]=18.0,[4]=18.0,[5]=18.0,[6]=18.0,[7]=18.0,[0]=18.0,},
   ['Corrupción de alma']={[0]=15.0,},
   ['Corrupción de la Tierra']={[0]=10.0,},
   ['Cortar alas']={[0]=10.0,},
+  ['Corte de Alas']={[0]=10.0,},--SA
   ['Cortar alas mejorado']={[0]=5.0,},
+  ['Corte al Ala Mejorado']={[0]=5.0,},--SA
   ['Corteza química']={[0]=10.0,},
   ['Crear aura de Zul']={[0]=30.0,},
   ['Crear círculo de invocación del Corazón de Hakkar']={[0]=30.0,},
@@ -1697,12 +1753,16 @@ ShaguPlates_locale["esES"]["debuffs"] = {
   ['Disolver armadura']={[0]=20.0,},
   ['Disparo de Escarcha']={[0]=10.0,},
   ['Disparo de conmoción']={[0]=4.0,},
+  ['Disparo Conmocionante']={[0]=4.0,},--SA
   ['Disparo de conmoción mejorado']={[0]=3.0,},
+  ['Disparo Conmocionante Mejorado']={[0]=3.0,},--SA
   ['Disparo de veneno']={[0]=75.0,},
   ['Disparo desmontador']={[0]=2.0,},
   ['Disparo disperso']={[0]=4.0,},
+  ['Disparo Disperso']={[0]=4.0,},--SA
   ['Disparo enfermo']={[0]=300.0,},
   ['Disparo penetrante']={[0]=15.0,},
+  ['Disparos Perforantes']={[0]=8.0,},--SA
   ['Disyunción']={[0]=300.0,},
   ['Dolencia Magenta']={[0]=1200.0,},
   ['Dolencia debilitadora']={[0]=30.0,},
@@ -1730,11 +1790,16 @@ ShaguPlates_locale["esES"]["debuffs"] = {
   ['Dominio del alma']={[0]=60.0,},
   ['Dormir']={[1]=20.0,[2]=30.0,[0]=30.0,},
   ['Drenaje de vida']={[0]=12.0,},
+  ['Drenaje de Maná']={[0]=5.0,},--SA
   ['Drenar alma']={[0]=15.0,},
   ['Drenar maná']={[0]=5.0,},
+  ['Drenar Maná']={[0]=5.0,},--SA
   ['Drenar vida']={[0]=5.0,},
+  ['Drenar Vida']={[0]=5.0,},--SA
   ['Efecto aturdidor de mazas']={[0]=3.0,},
   ['Efecto de Trampa explosiva']={[0]=20.0,},
+  ['Efecto de Trampa Explosiva']={[0]=20.0,},--SA
+  ['Efecto de Trampa de Escarcha']={[0]=30.0,},--SA
   ['Efecto de aparición de muñeco-diana avanzado']={[0]=10.0,},
   ['Efecto de aparición muñeco-diana']={[0]=5.0,},
   ['Efecto de carga feral']={[0]=4.0,},
@@ -1745,7 +1810,9 @@ ShaguPlates_locale["esES"]["debuffs"] = {
   ['Efecto de sangre mácula']={[0]=10.0,},
   ['Efecto de sufrimiento de Taelan']={[0]=2.0,},
   ['Efecto de trampa congelante']={[1]=10.0,[2]=15.0,[3]=20.0,[0]=20.0,},
+  ['Efecto Trampa Congelante']={[1]=10.0,[2]=15.0,[3]=20.0,[0]=20.0,},--SA
   ['Efecto de trampa de inmolación']={[0]=15.0,},
+  ['Efecto de Trampa de Inmolación']={[0]=15.0,},--SA
   ['Efecto de veneno menor de escorpión']={[0]=60.0,},
   ['Efecto de éxtasis']={[0]=15.0,},
   ['Efecto molesto']={[0]=3.0,},
@@ -1835,9 +1902,11 @@ ShaguPlates_locale["esES"]["debuffs"] = {
   ['Fuego acogedor']={[0]=60.0,},
   ['Fuego elemental']={[0]=8.0,},
   ['Fuego feérico']={[0]=40.0,},
+  ['Fuego Feérico']={[0]=40.0,},--SA
   ['Fuego feérico (feral)']={[0]=40.0,},
   ['Fuego justo']={[0]=8.0,},
   ['Fuego lunar']={[1]=9.0,[2]=12.0,[3]=12.0,[4]=12.0,[5]=12.0,[6]=12.0,[7]=12.0,[8]=12.0,[9]=12.0,[10]=12.0,[0]=12.0,},
+  ['Fuego Lunar']={[1]=9.0,[2]=12.0,[3]=12.0,[4]=12.0,[5]=12.0,[6]=12.0,[7]=12.0,[8]=12.0,[9]=12.0,[10]=12.0,[0]=12.0,},
   ['Fuerza corrupta']={[0]=4.0,},
   ['Fuerza deteriorada']={[0]=300.0,},
   ['Fundir armadura']={[0]=60.0,},
@@ -1867,11 +1936,13 @@ ShaguPlates_locale["esES"]["debuffs"] = {
   ['Golpe del Cruzado']={[0]=30.0,},
   ['Golpe desequilibrante']={[0]=6.0,},
   ['Golpe doloroso']={[0]=5.0,},
-  ['Golpe en los riñones']={[1]=0,[2]=1.0,},
+  ['Golpe en los riñones']={[0]=1.0,},
+  ['Golpe de Riñón']={[0]=1.0,},--SA
   ['Golpe fantasma']={[0]=20.0,},
   ['Golpe fantasmal']={[0]=7.0,},
   ['Golpe marchito']={[0]=8.0,},
   ['Golpe mortal']={[0]=10.0,},
+  ['Golpe Mortal']={[0]=10.0,},--SA
   ['Gorra de control mental gnómica']={[0]=20.0,},
   ['Gorro de control mental gnómico']={[0]=20.0,},
   ['Granizo']={[0]=3.0,},
@@ -1880,6 +1951,7 @@ ShaguPlates_locale["esES"]["debuffs"] = {
   ['Grito de guerra']={[0]=900.0,},
   ['Grito desafiante']={[0]=6.0,},
   ['Grito desmoralizador']={[0]=30.0,},
+  ['Grito Desmoralizador']={[0]=30.0,},--SA
   ['Grito incapacitador']={[0]=60.0,},
   ['Grito intimidador']={[0]=8.0,},
   ['Guarda de red']={[0]=20.0,},
@@ -1896,6 +1968,8 @@ ShaguPlates_locale["esES"]["debuffs"] = {
   ['Hedor pútrido']={[0]=10.0,},
   ['Hemorragia']={[0]=15.0,},
   ['Hender armadura']={[0]=30.0,},
+  ['Herida Profunda']={[0]=12.0,},--SA
+  ['Romper Armadura']={[0]=30.0,},--SA
   ['Hendida Sagrada']={[0]=60.0,},
   ['Herida']={[0]=25.0,},
   ['Herida infectada']={[0]=300.0,},
@@ -2044,8 +2118,10 @@ ShaguPlates_locale["esES"]["debuffs"] = {
   ['Marca de las llamas']={[0]=120.0,},
   ['Marca de lo Salvaje']={[0]=1800.0,},
   ['Marca del cazador']={[0]=120.0,},
+  ['Marca de Cazador']={[0]=120.0,},--SA
   ['Marchitar']={[0]=21.0,},
   ['Martillo de justicia']={[1]=3.0,[2]=4.0,[3]=5.0,[4]=6.0,[0]=6.0,},
+  ['Martillo de la Justicia']={[1]=3.0,[2]=4.0,[3]=5.0,[4]=6.0,[0]=6.0,},--SA
   ['Martillo del Cruzado']={[0]=4.0,},
   ['Martillo del juez']={[0]=10.0,},
   ['Mella hendida']={[0]=30.0,},
@@ -2110,6 +2186,7 @@ ShaguPlates_locale["esES"]["debuffs"] = {
   ['Pacificar']={[0]=10.0,},
   ['Palabra Sagrada: entereza']={[0]=1800.0,},
   ['Palabra de las Sombras: dolor']={[0]=18.0,},
+  ['Palabra de Sombra: Dolor']={[0]=18.0,},--SA
   ['Paliza popular']={[0]=5.0,},
   ['Paliza salvaje']={[0]=5.0,},
   ['Paralizar']={[0]=30.0,},
@@ -2132,6 +2209,7 @@ ShaguPlates_locale["esES"]["debuffs"] = {
   ['Peste vagante']={[0]=300.0,},
   ['Petrificar']={[0]=8.0,},
   ['Pez ralentizante']={[0]=25.0,},
+  ['Picadura de Serpiente']={[0]=15.0,},--SA
   ['Picadura de víbora']={[0]=8.0,},
   ['Picar']={[0]=8.0,},
   ['Picar ojos']={[0]=12.0,},
@@ -2161,10 +2239,15 @@ ShaguPlates_locale["esES"]["debuffs"] = {
   ['Polimorfia']={[1]=20.0,[2]=30.0,[3]=40.0,[4]=50.0,[0]=50.0,},
   ['Polimorfia superior']={[0]=20.0,},
   ['Polimorfia: cerdo']={[0]=50.0,},
+  ['Polimorfia: Cerdo']={[0]=50.0,},--SA
   ['Polimorfia: gallina']={[0]=10.0,},
+  ['Polimorfia: Gallina']={[0]=10.0,},--SA
   ['Polimorfia: oveja']={[0]=10.0,},
+  ['Polimorfia: Oveja']={[0]=10.0,},--SA
   ['Polimorfia: tortuga']={[0]=50.0,},
+  ['Polimorfia: Tortuga']={[0]=50.0,},--SA
   ['Polimorfia: vaca']={[0]=50.0,},
+  ['Polimorfia: Vaca']={[0]=50.0,},--SA
   ['Polomorfia salvaje']={[0]=20.0,},
   ['Posesión']={[0]=120.0,},
   ['Pozo de Luz']={[0]=180.0,},
@@ -2206,6 +2289,7 @@ ShaguPlates_locale["esES"]["debuffs"] = {
   ['Rayo mortal gnomo']={[0]=4.0,},
   ['Rayo polimórfico']={[0]=4.0,},
   ['Raíces hierbales']={[0]=15.0,},
+  ['Raíces Enredadoras']={[0]=15.0,},--SA
   ['Reavivación de alma']={[0]=1800.0,},
   ['Rebanasesos']={[0]=30.0,},
   ['Recobrar el llanto del cazadragones']={[0]=7200.0,},
@@ -2249,7 +2333,9 @@ ShaguPlates_locale["esES"]["debuffs"] = {
   ['Sangre maldita']={[0]=600.0,},
   ['Sauce envolvente']={[0]=30.0,},
   ['Seccionar']={[0]=15.0,},
+  ['Corte de Tendón']={[0]=15.0,},--SA
   ['Seccionar mejorado']={[0]=5.0,},
+  ['Corte de Tendón Mejorado']={[0]=5.0,},--SA
   ['Secuelas']={[0]=5.0,},
   ['Seducción']={[0]=15.0,},
   ['Segavientos']={[0]=20.0,},
@@ -2324,6 +2410,7 @@ ShaguPlates_locale["esES"]["debuffs"] = {
   ['Triturar']={[0]=12.0,},
   ['Tropiezo']={[0]=3.0,},
   ['Trueno']={[1]=10.0,[2]=14.0,[3]=18.0,[4]=22.0,[5]=26.0,[6]=30.0,[0]=30.0,},
+  ['Aplastar Trueno']={[1]=10.0,[2]=14.0,[3]=18.0,[4]=22.0,[5]=26.0,[6]=30.0,[0]=30.0,},--SA
   ['Tumba de hielo']={[0]=10.0,},
   ['Técnica de cinco dedos gordos de explosión cardíaca']={[0]=30.0,},
   ['Tósigo de piel venenosa']={[0]=30.0,},
@@ -2392,7 +2479,8 @@ ShaguPlates_locale["esES"]["debuffs"] = {
 }
 
 -- custom entries not detected by DBC extractor
-ShaguPlates_locale["esES"]["debuffs"]['Cono de frío']={[0]=8.0,} -- Cone of Cold
+--ShaguPlates_locale["esES"]["debuffs"]['Cono de frío']={[0]=8.0,} -- Cone of Cold
+ShaguPlates_locale["esES"]["debuffs"]['Cono de Frío']={[0]=8.0,} -- Cone of Cold SA
 
 ShaguPlates_locale["esES"]["totems"] = {
   ["Tótem de limpieza de enfermedades"] = "spell_nature_diseasecleansingtotem",
