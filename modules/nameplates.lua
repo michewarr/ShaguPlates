@@ -127,21 +127,25 @@ ShaguPlates:RegisterModule("nameplates", "vanilla:tbc", function ()
   end
 
   local function abbrevname(t)
-    return string.sub(t,1,1)..". "
+    return string.sub(t,1,1).."."
   end
 
   local function GetNameString(name)
     local abbrev = ShaguPlates_config.unitframes.abbrevname == "1" or nil
     local size = 20
 
-    -- first try to only abbreviate the first word
-    if abbrev and name and strlen(name) > size then
-      name = string.gsub(name, "^(%S+) ", abbrevname)
+    -- capture first word
+    local s_start, s_end, first_word = string.find(name, "^(%S+)%s+")
+    local rest = nil
+    if s_end then
+      -- If we found the first word and following whitespace,
+      -- extract the rest of the string
+      rest = string.sub(name, s_end + 1)
     end
 
     -- abbreviate all if it still doesn't fit
     if abbrev and name and strlen(name) > size then
-      name = string.gsub(name, "(%S+) ", abbrevname)
+      name = first_word .. " " .. string.gsub(rest, "(%S+)", abbrevname)
     end
 
     return name
@@ -193,14 +197,7 @@ ShaguPlates:RegisterModule("nameplates", "vanilla:tbc", function ()
     if not self.debuffcache then self.debuffcache = {} end
 
     for id = 1, 16 do
-      local effect, _, texture, stacks, _, duration, timeleft
-
-      if unitstr and C.nameplates.selfdebuff == "1" then
-        effect, _, texture, stacks, _, duration, timeleft = libdebuff:UnitOwnDebuff(unitstr, id)
-      else
-        effect, _, texture, stacks, _, duration, timeleft = libdebuff:UnitDebuff(unitstr, id)
-      end
-
+      local effect, _, texture, stacks, _, duration, timeleft = libdebuff:UnitDebuff(unitstr, id)
       if effect and timeleft and timeleft > 0 then
         local start = GetTime() - ( (duration or 0) - ( timeleft or 0) )
         local stop = GetTime() + ( timeleft or 0 )
@@ -559,7 +556,7 @@ ShaguPlates:RegisterModule("nameplates", "vanilla:tbc", function ()
     nameplate.castbar:SetPoint("TOPLEFT", nameplate.health, "BOTTOMLEFT", 0, -default_border*3)
     nameplate.castbar:SetPoint("TOPRIGHT", nameplate.health, "BOTTOMRIGHT", 0, -default_border*3)
     nameplate.castbar:SetHeight(C.nameplates.heightcast)
-    nameplate.castbar:SetStatusBarTexture(hptexture)
+    nameplate.castbar:SetStatusBarTexture(ShaguPlates.media["img:bar"])
     nameplate.castbar:SetStatusBarColor(.9,.8,0,1)
     CreateBackdrop(nameplate.castbar, default_border)
 
@@ -654,13 +651,13 @@ ShaguPlates:RegisterModule("nameplates", "vanilla:tbc", function ()
     elseif target and C.nameplates.targethighlight == "1" then
       plate.health.backdrop:SetBackdropBorderColor(plate.health.hlr, plate.health.hlg, plate.health.hlb, plate.health.hla)
     elseif C.nameplates.outfriendlynpc == "1" and unittype == "FRIENDLY_NPC" then
-      plate.health.backdrop:SetBackdropBorderColor(unpack(unitcolors[unittype]))
+      plate.health.backdrop:SetBackdropBorderColor(.2,.7,.3,1)
     elseif C.nameplates.outfriendly == "1" and unittype == "FRIENDLY_PLAYER" then
-      plate.health.backdrop:SetBackdropBorderColor(unpack(unitcolors[unittype]))
+      plate.health.backdrop:SetBackdropBorderColor(.2,.3,.7,1)
     elseif C.nameplates.outneutral == "1" and strfind(unittype, "NEUTRAL") then
-      plate.health.backdrop:SetBackdropBorderColor(unpack(unitcolors[unittype]))
+      plate.health.backdrop:SetBackdropBorderColor(.7,.7,.2,1)
     elseif C.nameplates.outenemy == "1" and strfind(unittype, "ENEMY") then
-      plate.health.backdrop:SetBackdropBorderColor(unpack(unitcolors[unittype]))
+      plate.health.backdrop:SetBackdropBorderColor(.7,.2,.3,1)
     else
       plate.health.backdrop:SetBackdropBorderColor(er,eg,eb,ea)
     end
@@ -805,10 +802,7 @@ ShaguPlates:RegisterModule("nameplates", "vanilla:tbc", function ()
       -- update all debuff icons
       for i = 1, 16 do
         local effect, rank, texture, stacks, dtype, duration, timeleft
-
-        if unitstr and C.nameplates.selfdebuff == "1" then
-          effect, rank, texture, stacks, dtype, duration, timeleft = libdebuff:UnitOwnDebuff(unitstr, i)
-        elseif unitstr then
+        if unitstr then
           effect, rank, texture, stacks, dtype, duration, timeleft = libdebuff:UnitDebuff(unitstr, i)
         elseif plate.verify == verify then
           effect, rank, texture, stacks, dtype, duration, timeleft = plate:UnitDebuff(i)
@@ -1018,34 +1012,22 @@ ShaguPlates:RegisterModule("nameplates", "vanilla:tbc", function ()
 
     -- castbar update
     if C.nameplates["showcastbar"] == "1" and ( C.nameplates["targetcastbar"] == "0" or target ) then
-      local channel, cast, nameSubtext, text, texture, startTime, endTime, isTradeSkill
-
-      -- detect cast or channel bars
-      cast, nameSubtext, text, texture, startTime, endTime, isTradeSkill = UnitCastingInfo(target and "target" or name)
-      if not cast then channel, nameSubtext, text, texture, startTime, endTime, isTradeSkill = UnitChannelInfo(target and "target" or name) end
+      local cast, nameSubtext, text, texture, startTime, endTime, isTradeSkill = UnitCastingInfo(target and "target" or name)
 
       -- read enemy casts from SuperWoW if enabled
       if superwow_active then
         cast, nameSubtext, text, texture, startTime, endTime, isTradeSkill = UnitCastingInfo(nameplate.parent:GetName(1))
-        if not cast then channel, nameSubtext, text, texture, startTime, endTime, isTradeSkill = UnitChannelInfo(nameplate.parent:GetName(1)) end
       end
 
-      if not cast and not channel then
+      if not cast then
         nameplate.castbar:Hide()
-      elseif cast or channel then
-        local effect = cast or channel
+      elseif cast then
         local duration = endTime - startTime
-        local max = duration / 1000
-        local cur = GetTime() - startTime / 1000
-
-        -- invert castbar values while channeling
-        if channel then cur = max + startTime/1000 - GetTime() end
-
         nameplate.castbar:SetMinMaxValues(0,  duration/1000)
-        nameplate.castbar:SetValue(cur)
-        nameplate.castbar.text:SetText(round(cur,1))
+        nameplate.castbar:SetValue(GetTime() - startTime/1000)
+        nameplate.castbar.text:SetText(round(startTime/1000 + duration/1000 - GetTime(),1))
         if C.nameplates.spellname == "1" then
-          nameplate.castbar.spell:SetText(effect)
+          nameplate.castbar.spell:SetText(cast)
         else
           nameplate.castbar.spell:SetText("")
         end
